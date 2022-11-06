@@ -16,6 +16,7 @@
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -32,4 +33,13 @@
 
 .tile {
   background-color: white;
+}
+
+.info {
+  position: absolute;
+  top: 75px;
+}
+
+.invisible {
+  visibility: hidden;
 }
