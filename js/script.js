@@ -158,6 +158,7 @@ const Gameboard = (() => {
     info.textContent = "";
     info.classList.toggle("invisible");
   };
+  return { resetGame };
 })();
 
 const Game = (() => {
@@ -174,3 +175,23 @@ const Game = (() => {
 const player = (name) => {
   return { name };
 };
+
+const Setup = (() => {
+  const modal = document.querySelector(".modal-background");
+  const pvpButton = document.querySelector(".pvp");
+  const aiButton = document.querySelector(".ai");
+  const restartBtn = document.querySelector(".restart-btn");
+  restartBtn.addEventListener("click", () => {
+    Gameboard.resetGame();
+  });
+  pvpButton.addEventListener("click", (event) => {
+    hideModal();
+    unBlur();
+  });
+  const unBlur = () => {
+    document.querySelector(".main").classList.remove("active-blur");
+  };
+  const hideModal = () => {
+    modal.classList.add("invisible");
+  };
+})();
